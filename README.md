@@ -6,7 +6,8 @@ Commit "Exercice de ProductList"
 Découpage des composants :
 Commit "Exercice Découpage des composants - avec iteration"
 
-
+Exercice de formulaire : 
+Branch "Exercice3"
 
 # nextu-vue-helloworld
 
