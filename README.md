@@ -1,3 +1,13 @@
+Travaux Pratiques :
+
+Product List :
+Commit "Exercice de ProductList"
+
+Découpage des composants :
+Commit "Exercice Découpage des composants - avec iteration"
+
+
+
 # nextu-vue-helloworld
 
 This template should help get you started developing with Vue 3 in Vite.
