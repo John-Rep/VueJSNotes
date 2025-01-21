@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
     id: Number,
     label: String,
     description: String,

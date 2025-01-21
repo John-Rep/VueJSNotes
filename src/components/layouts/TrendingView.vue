@@ -1,16 +1,21 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import type { Trend } from "@/models/trend"
+const props = defineProps<{
+    trend: Trend
+}>()
+</script>
 <template>
     <div class="trend">
                   <figure>
                     <img
                       class="avatar"
-                      src="https://robohash.org/irwi32.png?set=set4"
+                      :src="props.trend.image"
                       alt="avatar"
                     />
                   </figure>
                   <div class="trend-details">
-                    <h6>@tegan</h6>
-                    <p>World Peace Builder</p>
+                    <h6>{{ trend.name }}</h6>
+                    <p>{{ trend.title }}</p>
                   </div>
                 </div>
 </template>

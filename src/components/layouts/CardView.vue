@@ -1,15 +1,14 @@
 <script lang="ts" setup>
+import type { Project } from '@/models/project'
+const props = defineProps<{
+  project: Project
+}>()
 </script>
 <template>
     <div class="card">
-        <h5>Event</h5>
+        <h5>{{ project.title }}</h5>
         <p>
-            Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-            reprehenderit enim labore culpa sint ad nisi Lorem pariatur
-            mollit ex esse exercitation amet. Nisi anim cupidatat
-            Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-            reprehenderit enim labore culpa sint ad nisi Lorem pariatur
-            mollit ex esse exercitation amet. Nisi anim cupidatat
+            {{ project.content }}
         </p>
         <div class="project-buttons">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

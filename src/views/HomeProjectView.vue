@@ -1,7 +1,29 @@
 <script lang="ts" setup>
 import Card from "../components/layouts/CardView.vue"
-import Announcement from "../components/layouts/AnnouncementView.vue"
-import Trend from "../components/layouts/TrendingView.vue"
+import Annonce from "../components/layouts/AnnouncementView.vue"
+import TrendCard from "../components/layouts/TrendingView.vue"
+import type { Project } from "@/models/project"
+import type { Announcement } from "@/models/announcement"
+import type { Trend } from "@/models/trend"
+const projectsData: Project[] = [
+  { title: 'Super Cool Project', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Super Cool Project', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Super Cool Project', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Super Cool Project', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Super Cool Project', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Super Cool Project', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+]
+const announcementsData: Announcement[] = [
+  { title: 'Site Maintenance', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Community Share Day', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+  { title: 'Updated Privacy Policy', content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat' },
+]
+const trendData: Trend[] = [
+  { name: "@tegan", title: "World Peace Builder", image: "https://robohash.org/irwi32.png?set=set4"},
+  { name: "@morgan", title: "Super Cool Project", image: "https://robohash.org/ijrwi32.png?set=set4"},
+  { name: "@kindall", title: "Life Changing App", image: "https://robohash.org/irw2.png?set=set4"},
+  { name: "@alex", title: "No Traffic Maker", image: "https://robohash.org/ireqwe2.png?set=set4"},
+]
 </script>
 <template>
 <div class="container project-box">
@@ -9,105 +31,27 @@ import Trend from "../components/layouts/TrendingView.vue"
           <div class="project">
             <h4>Your Projects</h4>
             <div class="project-grid">
-              <Card/>
-              <Card/>
-              <Card/>
-              <Card/>
-              <Card/>
-              <Card/>
+              <span v-for="(project) in projectsData">
+                <Card :project="project"/>
+              </span>
             </div>
           </div>
           <section class="side">
             <div class="announcement">
               <h4>Announcements</h4>
               <div class="background-box">
-                <Announcement/>
-                <hr />
-                <Announcement/>
-                <hr />
-                <div class="anounce">
-                  <h5>Community Share Day</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-                    reprehenderit enim labore culpa sint ad nisi Lorem pariatur
-                    mollit ex esse exercitation amet. Nisi anim cupidatat
-                    excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem
-                    est aliquip amet voluptate voluptate dolor minim nulla est
-                    proident. Nostrud officia pariatur ut officia. Sit irure
-                    elit esse ea nulla sunt ex occaecat reprehenderit commodo
-                    officia dolor Lorem duis laboris cupidatat officia
-                    voluptate. Culpa proident adipisicing id nulla nisi laboris
-                    ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit
-                    commodo ex non excepteur duis sunt velit enim. Voluptate
-                    laboris sint cupidatat ullamco ut ea consectetur et est
-                    culpa et culpa duis.
-                  </p>
-                </div>
-                <hr />
-                <div class="anounce">
-                  <h5>Updated Privacy Policy</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-                    reprehenderit enim labore culpa sint ad nisi Lorem pariatur
-                    mollit ex esse exercitation amet. Nisi anim cupidatat
-                    excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem
-                    est aliquip amet voluptate voluptate dolor minim nulla est
-                    proident. Nostrud officia pariatur ut officia. Sit irure
-                    elit esse ea nulla sunt ex occaecat reprehenderit commodo
-                    officia dolor Lorem duis laboris cupidatat officia
-                    voluptate. Culpa proident adipisicing id nulla nisi laboris
-                    ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit
-                    commodo ex non excepteur duis sunt velit enim. Voluptate
-                    laboris sint cupidatat ullamco ut ea consectetur et est
-                    culpa et culpa duis.
-                  </p>
-                </div>
+                <span v-for="(announcement) in announcementsData">
+                  <Annonce :announcement="announcement"/>
+                  <hr />
+                </span>
               </div>
             </div>
             <div>
               <h4>Trending</h4>
               <div class="background-box trending">
-                <Trend/>
-                <Trend/>
-                <div class="trend">
-                  <figure>
-                    <img
-                      class="avatar"
-                      src="https://robohash.org/ijrwi32.png?set=set4"
-                      alt="avatar"
-                    />
-                  </figure>
-                  <div class="trend-details">
-                    <h6>@morgan</h6>
-                    <p>Super cool Project</p>
-                  </div>
-                </div>
-                <div class="trend">
-                  <figure>
-                    <img
-                      class="avatar"
-                      src="https://robohash.org/irw2.png?set=set4"
-                      alt="avatar"
-                    />
-                  </figure>
-                  <div class="trend-details">
-                    <h6>@kindall</h6>
-                    <p>Life Changing App</p>
-                  </div>
-                </div>
-                <div class="trend">
-                  <figure>
-                    <img
-                      class="avatar"
-                      src="https://robohash.org/ireqwe2.png?set=set4"
-                      alt="avatar"
-                    />
-                  </figure>
-                  <div class="trend-details">
-                    <h6>@alex</h6>
-                    <p>No Traffic Maker</p>
-                  </div>
-                </div>
+                <span v-for="(trend) in trendData">
+                  <TrendCard :trend="trend"/>
+                </span>
               </div>
             </div>
           </section>

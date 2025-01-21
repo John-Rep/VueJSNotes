@@ -1,4 +1,4 @@
-export interface Project {
+export interface Announcement {
     title: String,
     content: String,
 }
