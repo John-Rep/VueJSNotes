@@ -21,7 +21,16 @@ const formErrors = reactive({
     ville: '',
     institut: '',
 })
+const displayEntries = ref(false);
 const validateForm = () => {
+    formErrors.nom = '';
+    formErrors.prenom = '';
+    formErrors.email = '';
+    formErrors.sexe = '';
+    formErrors.adresse = '';
+    formErrors.codePostal = '';
+    formErrors.ville = '';
+    formErrors.institut = '';
     let erreur = false;
     if (!student.nom) {
         formErrors.nom = "Erreur : Il faut remplir le champ de nom"
@@ -55,7 +64,9 @@ const validateForm = () => {
         formErrors.institut = "Erreur : Il faut remplir le champ de nom de l'institut"
         erreur = true;
     }
-
+    if (!erreur) {
+        displayEntries.value = true;
+    }
 }
 </script>
 <template>
@@ -89,5 +100,6 @@ const validateForm = () => {
         <button type="submit">Valider</button>
         <button type="reset">Annuler</button>
     </form>
+    <h2 v-if="displayEntries" v-for="(element) in student">{{ element }}</h2>
 </template>
 <style></style>
