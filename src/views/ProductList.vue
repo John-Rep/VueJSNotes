@@ -1,6 +1,5 @@
 <script lang="ts">
 import { computed, ref } from 'vue'
-
 export default{
     name: 'ProductList',
     props: {
